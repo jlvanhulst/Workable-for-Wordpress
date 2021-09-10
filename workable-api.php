@@ -117,7 +117,7 @@ function workable_api_listjobs( $atts =[],$content = null, $tag='' ) {
     $plugin   = new Workable_Api();
     $workable = new Workable_Api_Wrapper( $plugin->get_plugin_name(), PLUGIN_NAME_VERSION );
 
-    $job_listing  =  $workable->get_jobs( array( 'state' => $workable_atts['state']) );
+    $job_listing  =  $workable->get_jobs( array( 'state' => $workable_atts['state'], 'limit' => 100) );
 
     if ( $job_listing ) {
         $count = 0;
